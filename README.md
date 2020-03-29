@@ -18,4 +18,4 @@ Other required packages:
 Need Help?
 ----------
 Need help using EnsPy? Found an issue? Have a feature request? Check out my
-[personal blog](www.gboumis.com) and contact me via my LinkedIn profile found at the footer.
+[personal blog](http://www.gboumis.com) and contact me via my LinkedIn profile found at the footer.
