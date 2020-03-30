@@ -6,6 +6,10 @@
 
 import os.path
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from datetime import datetime, timedelta
+plt.style.use("ggplot")
 pd.set_option('mode.chained_assignment', None)
 
 
@@ -41,3 +45,19 @@ class enspytools:
             d = dataframe[dataframe.columns[0]][i][-2:]
             dataframe[dataframe.columns[0]][i] = a + b + c + d
         return dataframe
+
+    def enspygraph(self, dataframe):
+        issuedate = datetime.strptime(dataframe.iloc[0, 0], '%Y-%m-%d %H')
+        issuedate = issuedate - timedelta(hours=int(dataframe.iloc[0, 1]))
+        issuedate = "Forecast issue date:" + " " + str(issuedate)
+        plotlist = []
+        for i in range(len(dataframe.columns) - 2):
+            vlist = list(dataframe.iloc[:, i + 2])
+            plotlist.append(vlist)
+        plotarray = np.array(plotlist)
+        plt.plot(dataframe.iloc[:, 1], np.matrix.transpose(
+            plotarray), color="cornflowerblue")
+        plt.xlabel("Lead time (hours)")
+        plt.xticks(dataframe.iloc[:, 1])
+        plt.title(issuedate)
+        plt.show()
