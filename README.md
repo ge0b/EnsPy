@@ -11,9 +11,9 @@ Dependencies
 ------------
 Other required packages:
 
-- Numpy (to be added)
-- Matplotlib (to be added)
-- Pandas (so far)
+- Numpy
+- Matplotlib
+- Pandas
 
 Need Help?
 ----------
