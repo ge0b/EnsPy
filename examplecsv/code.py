@@ -1,6 +1,6 @@
-# read an ensemble forecast from a .csv file and create a proper tidy dataframe
+# example of reading an ensemble forecast from a .csv file and creating a proper tidy dataframe and a graph
 from EnsPy import enspytools
 
 myfile = enspytools("/Users/georgiosboumis/Desktop/5-memberEnsemble.csv")
 mydataframe = myfile.enspyframe()
-print(mydataframe)
+myfile.enspygraph(mydataframe)
