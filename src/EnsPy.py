@@ -61,3 +61,14 @@ class enspytools:
         plt.xticks(dataframe.iloc[:, 1])
         plt.title(issuedate)
         plt.show()
+
+    def enspyprob(self, dataframe, date, threshold):
+        row = dataframe.index[dataframe["Forecast valid date"] == date][0]
+        i = 0
+        for j in range(2, len(dataframe.iloc[row, :])):
+            if dataframe.iloc[row, j] < threshold:
+                i += 1
+        prob = (i + 1 - 1 / 3) / (len(dataframe.iloc[row, :]) - 2 + 1 - 1 / 3)
+        prob = (1 - prob) * 100
+        print("")
+        print(f"Probability of >= {threshold} equals {prob}")
