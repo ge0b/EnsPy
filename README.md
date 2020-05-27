@@ -1,4 +1,4 @@
-# EnsPy (under development...)
+# EnsPy
 
 ![License](https://img.shields.io/pypi/l/metpy.svg)
 
